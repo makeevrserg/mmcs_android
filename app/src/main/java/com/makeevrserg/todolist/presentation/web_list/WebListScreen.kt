@@ -48,7 +48,7 @@ fun WebListScreen(
             }
         _characters?.let { characters ->
             LazyColumn() {
-                items(characters.results) { character ->
+                items(characters) { character ->
                     DashedCard(
                         modifier = Modifier.clickable { navController.navigate(AppScreen.WebElementScreen.route + "?id=${character.id}") },
                         title = {

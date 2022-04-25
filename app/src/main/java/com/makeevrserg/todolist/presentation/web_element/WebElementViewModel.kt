@@ -16,7 +16,7 @@ class WebElementViewModel(id: Long) : AndroidViewModel(App.instance) {
 
     init {
         viewModelScope.launch {
-            _character.postValue(App.webRepository.fetchCharacter(id))
+            _character.postValue(App.repository.fetchCharacter(id))
             isLoading.postValue(false)
         }
     }

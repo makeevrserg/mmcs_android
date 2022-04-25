@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Room
 
 object DatabaseBuilder {
-    fun build(context: Context) = Room.inMemoryDatabaseBuilder(
+    fun build(context: Context) = Room.databaseBuilder(
         context,
         TodoDatabase::class.java,
-//        TodoDatabase.DATABASE_NAME,
+        TodoDatabase.DATABASE_NAME,
     ).fallbackToDestructiveMigration().build()
 }
