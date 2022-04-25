@@ -10,5 +10,25 @@
         android:name="com.makeevrserg.todolist.todo_list.TodoListFragment"
         android:label=" "
         tools:layout="@layout/todolist_fragment">
+        <action
+            android:id="@+id/action_todolist_fragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+        <action
+            android:id="@+id/action_todolist_fragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.makeevrserg.todolist.add_item_fragment.AddItemFragment"
+        android:label="AddItemFragment"
+        tools:layout="@layout/add_item_fragment" />
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.makeevrserg.todolist.item_detail_fragment.ItemDetailFragment"
+        android:label="ItemDetailFragment"
+        tools:layout="@layout/item_detail_fragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
     </fragment>
 </navigation>

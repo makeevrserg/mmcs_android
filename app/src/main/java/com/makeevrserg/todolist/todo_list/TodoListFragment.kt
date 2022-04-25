@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.makeevrserg.todolist.R
 import com.makeevrserg.todolist.databinding.TodolistFragmentBinding
 
@@ -15,7 +16,12 @@ class TodoListFragment : Fragment() {
         ViewModelProvider(this)[TodoListViewModel::class.java]
     }
     val adapter by lazy {
-        TodoListAdapter()
+        TodoListAdapter() { i, item ->
+            println("Clicked ${item}")
+            findNavController().navigate(
+                TodoListFragmentDirections.actionTodolistFragmentToItemDetailFragment(item.text)
+            )
+        }
     }
 
     override fun onCreateView(
